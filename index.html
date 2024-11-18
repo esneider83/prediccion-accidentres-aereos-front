@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Accidentes Aéreos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0078D4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #0078D4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+        main {
+            padding: 20px;
+        }
+        .section {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .section h2 {
+            color: #0078D4;
+        }
+        .toggle-button {
+            background-color: #0078D4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .toggle-button:hover {
+            background-color: #005fa3;
+        }
+        .hidden {
+            display: none;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 10px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function toggleFrame(id) {
+            const frameContainer = document.getElementById(id);
+            if (frameContainer.classList.contains('hidden')) {
+                frameContainer.classList.remove('hidden');
+            } else {
+                frameContainer.classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Predicción de Accidentes Aéreos</h1>
+        <h2>Desarrollado por:</h2>
+        <h3>Ing. Florez Arevalo Esneider Andrés, Ing. Herrera Acuña Edward Alexander, 
+            Ing. Rodríguez Ramírez Andrés Felipe. esneider.florez@libertadores.edu.co, 
+            afrodriguezr04@libertadores.edu.co, Eaherreraa@libertadores.edu.co</h3>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#crisp-dm">CRISP-DM</a>
+            <a href="#web-scraping">Web Scraping</a>
+            <a href="#analisis-automatico">Análisis Automático</a>
+            <a href="#recursos">Recursos</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Inicio -->
+        <section id="inicio" class="section">
+            <h2>Inicio</h2>
+            <p>Bienvenido al análisis de predicción de accidentes aéreos. Utiliza los botones de navegación para explorar las diferentes secciones del proyecto.</p>
+        </section>
+
+        <!-- CRISP-DM -->
+        <section id="crisp-dm" class="section">
+            <h2>Predicción de Accidentes Aéreos (CRISP-DM)</h2>
+            <p>Explora el modelo basado en la metodología CRISP-DM para predecir accidentes aéreos.</p>
+            <button class="toggle-button" onclick="toggleFrame('iframe-crisp-dm')">Mostrar/Ocultar PDF</button>
+            <div id="iframe-crisp-dm" class="hidden">
+                <iframe src="https://storageaccidentes.blob.core.windows.net/accidentesstorage/Prediccion_Accidentes_Aereos_CRISP_DM.pdf"></iframe>
+            </div>
+            <p><a href="#inicio">Volver al inicio</a></p>
+        </section>
+
+        <!-- Web Scraping -->
+        <section id="web-scraping" class="section">
+            <h2>Web Scraping de Datos</h2>
+            <p>Obtén información sobre cómo recolectamos datos de accidentes aéreos usando técnicas de web scraping.</p>
+            <button class="toggle-button" onclick="toggleFrame('content-web-scraping')">Mostrar/Ocultar PDF</button>
+            <div id="content-web-scraping" class="hidden">
+                <iframe src="https://storageaccidentes.blob.core.windows.net/accidentesstorage/Modelo de Web scraping para obtención de datos de accidentes aéreos.pdf"></iframe>
+            </div>
+            <p><a href="#inicio">Volver al inicio</a></p>
+        </section>
+
+        <!-- Análisis Automático -->
+        <section id="analisis-automatico" class="section">
+            <h2>Análisis Automático</h2>
+            <p>Descubre el modelo de análisis automático para la predicción de accidentes aéreos.</p>
+            <button class="toggle-button" onclick="toggleFrame('content-analisis-automatico')">Mostrar/Ocultar PDF</button>
+            <div id="content-analisis-automatico" class="hidden">
+                <iframe src="https://storageaccidentes.blob.core.windows.net/accidentesstorage/Modelo de analsisi automatico para la prediccion de accidentes aereos usando (1).pdf"></iframe>
+            </div>
+            <p><a href="#inicio">Volver al inicio</a></p>
+        </section>
+
+        <!-- Recursos -->
+        <section id="recursos" class="section">
+            <h2>Recursos</h2>
+            <p>Accede a todos los recursos utilizados en la investigación, incluyendo artículos y herramientas.</p>
+            <button class="toggle-button" onclick="toggleFrame('content-recursos')">Mostrar/Ocultar Recursos</button>
+            <ul>
+                <li><a href="https://storageaccidentes.blob.core.windows.net/accidentesstorage/WebScraping.ipynb" target="_blank">WebScraping.ipynb</a></li>
+                <li><a href="https://aircrw.com" target="_blank">Tipos de mantenimiento aéreo</a></li>
+                <li><a href="https://predikdata.com" target="_blank">Modelos predictivos</a></li>
+            </ul>
+            <div id="content-recursos" class="hidden">
+                <!-- Usar Nbviewer para mostrar el archivo .ipynb -->
+                <iframe src="https://colab.research.google.com/drive/1abcdefGHIJKLMNO" width="800" height="600"></iframe>
+            </div>
+            <p><a href="#inicio">Volver al inicio</a></p>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2024 Predicción de Accidentes Aéreos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
